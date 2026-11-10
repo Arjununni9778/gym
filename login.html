@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Log into your FITZONE member account to view workouts, membership plan status, and booking history.">
+    <meta name="theme-color" content="#ffcc00">
+    <title>Member Login | FITZONE Premium Gym</title>
+
+    <!-- Vector Favicon with Yellow Accent -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23111'/><path d='M16 16 L48 16 L34 34 L48 34 L20 54 L28 36 L16 36 Z' fill='%23ffcc00'/></svg>">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            FIT<span>ZONE</span>
+        </a>
+        <nav>
+            <a href="index.html">← Back to Home</a>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <p class="tagline">MEMBER ACCESS</p>
+                <h2>WELCOME <span>BACK</span></h2>
+                <p class="auth-subtitle">Log in to view your membership, progress, and bookings.</p>
+            </div>
+
+            <form id="loginForm" novalidate>
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        placeholder="you@example.com" 
+                        required 
+                        autocomplete="email"
+                    >
+                </div>
+
+                <!-- Password with Show/Hide Toggle -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Enter your password" 
+                            required 
+                            autocomplete="current-password"
+                        >
+                        <button 
+                            type="button" 
+                            id="togglePasswordBtn" 
+                            class="password-toggle-btn" 
+                            aria-label="Toggle password visibility"
+                        >
+                            👁️ Show
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <button type="button" id="forgotPasswordBtn" class="link-btn">
+                        Forgot password?
+                    </button>
+                </div>
+
+                <!-- Status / Error Notification Box -->
+                <div id="loginMessage" class="form-message" role="alert"></div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="loginSubmitBtn" class="btn auth-submit-btn">
+                    LOGIN TO ACCOUNT ↗
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Don't have an account yet? <a href="signup.html">Join FITZONE now</a></p>
+                <p class="admin-link-note">Staff & Trainers: <a href="admin.html">Admin Portal</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Authentication Module -->
+    <script type="module">
+        import { initLoginPage } from "./auth.js";
+        initLoginPage();
+    </script>
+</body>
+</html>
+

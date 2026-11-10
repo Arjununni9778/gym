@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "site": "fitzone-gym-bab26",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "serve.js",
+      "package.json",
+      "package-lock.json",
+      "firestore.rules",
+      "firebase-debug.log"
+    ],
+    "cleanUrls": true
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}

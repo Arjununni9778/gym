@@ -1,0 +1,14 @@
+{
+  "name": "fitzone-gym",
+  "version": "1.0.0",
+  "description": "FITZONE - Premium Gym with Firebase Authentication & Firestore",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js",
+    "dev": "node serve.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+

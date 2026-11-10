@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign up for FITZONE Premium Gym. Join today to get personalized workout coaching and manage your session bookings online.">
+    <meta name="theme-color" content="#ffcc00">
+    <title>Member Sign Up | FITZONE Premium Gym</title>
+
+    <!-- Vector Favicon with Yellow Accent -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23111'/><path d='M16 16 L48 16 L34 34 L48 34 L20 54 L28 36 L16 36 Z' fill='%23ffcc00'/></svg>">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            FIT<span>ZONE</span>
+        </a>
+        <nav>
+            <a href="index.html">← Back to Home</a>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <p class="tagline">START YOUR JOURNEY</p>
+                <h2>JOIN <span>FITZONE</span></h2>
+                <p class="auth-subtitle">Create your member profile to manage your training sessions and plans.</p>
+            </div>
+
+            <form id="signupForm" novalidate>
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        placeholder="e.g. Rahul Sharma" 
+                        required 
+                        autocomplete="name"
+                    >
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        placeholder="you@example.com" 
+                        required 
+                        autocomplete="email"
+                    >
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        placeholder="+91 9876543210" 
+                        required 
+                        autocomplete="tel"
+                    >
+                </div>
+
+                <!-- Password with Show/Hide -->
+                <div class="form-group">
+                    <label for="password">Password (minimum 6 characters)</label>
+                    <div class="password-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Create a strong password" 
+                            minlength="6"
+                            required 
+                            autocomplete="new-password"
+                        >
+                        <button 
+                            type="button" 
+                            id="togglePasswordBtn" 
+                            class="password-toggle-btn" 
+                            aria-label="Toggle password visibility"
+                        >
+                            👁️ Show
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Confirm Password with Show/Hide -->
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input 
+                            type="password" 
+                            id="confirmPassword" 
+                            placeholder="Re-enter your password" 
+                            minlength="6"
+                            required 
+                            autocomplete="new-password"
+                        >
+                        <button 
+                            type="button" 
+                            id="toggleConfirmBtn" 
+                            class="password-toggle-btn" 
+                            aria-label="Toggle password visibility"
+                        >
+                            👁️ Show
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Status / Error Notification Box -->
+                <div id="signupMessage" class="form-message" role="alert"></div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="signupSubmitBtn" class="btn auth-submit-btn">
+                    CREATE ACCOUNT ↗
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+                <p class="terms-note">By signing up, you agree to FITZONE membership guidelines.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Authentication Module -->
+    <script type="module">
+        import { initSignupPage } from "./auth.js";
+        initSignupPage();
+    </script>
+</body>
+</html>
+

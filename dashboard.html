@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FITZONE Member Dashboard. View your profile, membership access pass, and live session booking statuses.">
+    <meta name="theme-color" content="#ffcc00">
+    <title>Member Dashboard | FITZONE Premium Gym</title>
+
+    <!-- Vector Favicon with Yellow Accent -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23111'/><path d='M16 16 L48 16 L34 34 L48 34 L20 54 L28 36 L16 36 Z' fill='%23ffcc00'/></svg>">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+
+    <!-- DASHBOARD HEADER -->
+    <header class="header dashboard-header">
+        <a href="index.html" class="logo">
+            FIT<span>ZONE</span>
+        </a>
+        <div class="dashboard-nav-actions">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#plans" class="nav-link">Membership Plans</a>
+            <button id="logoutBtn" class="btn btn-outline-sm">LOGOUT</button>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <!-- WELCOME BANNER -->
+        <section class="dashboard-hero">
+            <div>
+                <p class="tagline">MEMBER PORTAL</p>
+                <h1>WELCOME, <span id="welcomeName">MEMBER</span></h1>
+                <p class="hero-subtext">Manage your fitness profile, training sessions, and membership bookings.</p>
+            </div>
+            <div class="dashboard-hero-cta">
+                <a href="index.html#contact" class="btn">
+                    + BOOK A NEW SESSION
+                </a>
+            </div>
+        </section>
+
+        <!-- STATS OVERVIEW -->
+        <section class="dashboard-stats-grid">
+            <div class="stat-card">
+                <h3>Total Bookings</h3>
+                <p class="stat-number" id="totalBookingsCount">0</p>
+                <small>All time sessions</small>
+            </div>
+            <div class="stat-card stat-pending">
+                <h3>Pending Review</h3>
+                <p class="stat-number" id="pendingBookingsCount">0</p>
+                <small>Awaiting gym approval</small>
+            </div>
+            <div class="stat-card stat-approved">
+                <h3>Approved</h3>
+                <p class="stat-number" id="approvedBookingsCount">0</p>
+                <small>Confirmed slots</small>
+            </div>
+            <div class="stat-card stat-rejected">
+                <h3>Rejected</h3>
+                <p class="stat-number" id="rejectedBookingsCount">0</p>
+                <small>Cancelled / Inactive</small>
+            </div>
+        </section>
+
+        <!-- PROFILE & MEMBERSHIP ROW -->
+        <div class="dashboard-two-col">
+            <!-- Member Profile Card -->
+            <section class="dashboard-card">
+                <div class="card-title-row">
+                    <h2>MEMBER <span>PROFILE</span></h2>
+                    <span class="badge badge-role" id="memberRole">MEMBER</span>
+                </div>
+                <div class="profile-details-list">
+                    <div class="profile-item">
+                        <span class="item-label">Full Name:</span>
+                        <strong class="item-value" id="memberName">Loading...</strong>
+                    </div>
+                    <div class="profile-item">
+                        <span class="item-label">Email Address:</span>
+                        <strong class="item-value" id="memberEmail">Loading...</strong>
+                    </div>
+                    <div class="profile-item">
+                        <span class="item-label">Email Status:</span>
+                        <span id="emailVerifiedBadge" class="badge">Checking...</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="item-label">Phone Number:</span>
+                        <strong class="item-value" id="memberPhone">Loading...</strong>
+                    </div>
+                    <div class="profile-item">
+                        <span class="item-label">Member Since:</span>
+                        <strong class="item-value" id="memberSince">-</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Membership Info Card -->
+            <section class="dashboard-card">
+                <div class="card-title-row">
+                    <h2>MEMBERSHIP <span>STATUS</span></h2>
+                </div>
+                <div class="membership-info-box">
+                    <div class="plan-tag" id="activePlanTag">CHECKING STATUS...</div>
+                    <h3 id="activePlanTitle">Gym Access Pass</h3>
+                    <p class="plan-desc" id="activePlanDesc">
+                        Enjoy full access to weights, cardio machines, and locker facilities during gym operating hours (6:00 AM – 10:00 PM).
+                    </p>
+                    <div class="plan-actions">
+                        <a href="index.html#plans" class="btn btn-outline-sm">VIEW ALL PLANS ↗</a>
+                        <a href="index.html#contact" class="btn btn-sm">RENEW / UPGRADE</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- BOOKING HISTORY SECTION -->
+        <section class="dashboard-card booking-history-card">
+            <div class="card-title-row">
+                <div>
+                    <h2>BOOKING <span>HISTORY</span></h2>
+                    <p class="card-subtitle">Review all your scheduled session inquiries and membership requests.</p>
+                </div>
+                <a href="index.html#contact" class="btn btn-outline-sm">+ New Request</a>
+            </div>
+
+            <div class="table-responsive">
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Program / Membership</th>
+                            <th>Date Requested</th>
+                            <th>Phone</th>
+                            <th>Notes / Message</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="memberBookingTable">
+                        <tr>
+                            <td colspan="5" class="table-msg">Loading your booking history...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">
+            <a href="index.html" class="logo">
+                <span class="logo-arm-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffcc00">
+                        <path d="M20.57 14.86L22 13.43L20.57 12L17 15.57L8.43 7L12 3.43L10.57 2L9.14 3.43L7.71 2L5.57 4.14L4.14 2.71L2.71 4.14L4.14 5.57L2 7.71L3.43 9.14L2 10.57L5.57 14.14L14.14 22.71L17.71 19.14L16.29 17.71L17.71 16.29L20.57 14.86Z"/>
+                    </svg>
+                </span>
+                FIT<span>ZONE</span>
+            </a>
+            <p class="footer-tagline">Member Portal – Manage your fitness profile, sessions, and plan records.</p>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#plans">Plans</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+        </div>
+        <div class="footer-copy">
+            <p>© FITZONE GYM. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Authentication Module -->
+    <script type="module">
+        import { initDashboardPage } from "./auth.js";
+        initDashboardPage();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FITZONE – Premium Gym & Fitness Center. Transform your fitness with state-of-the-art equipment, certified trainers, and tailored workout plans.">
+    <meta name="keywords" content="FITZONE, gym, fitness center, personal training, strength training, workout, Kerala">
+    <meta name="theme-color" content="#ffcc00">
+    
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FITZONE | Premium Gym">
+    <meta property="og:description" content="Transform your body and mind with world-class gym facilities, expert trainers, and personalized programs.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80">
+
+    <title>FITZONE | Premium Gym</title>
+
+    <!-- Vector Favicon with Yellow Accent -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23111'/><path d='M16 16 L48 16 L34 34 L48 34 L20 54 L28 36 L16 36 Z' fill='%23ffcc00'/></svg>">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+    <a href="index.html" class="logo">
+        <span class="logo-arm-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffcc00">
+                <path d="M20.57 14.86L22 13.43L20.57 12L17 15.57L8.43 7L12 3.43L10.57 2L9.14 3.43L7.71 2L5.57 4.14L4.14 2.71L2.71 4.14L4.14 5.57L2 7.71L3.43 9.14L2 10.57L5.57 14.14L14.14 22.71L17.71 19.14L16.29 17.71L17.71 16.29L20.57 14.86Z"/>
+            </svg>
+        </span>
+        FIT<span>ZONE</span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+        ☰
+    </button>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#plans">Membership</a>
+        <a href="#contact">Contact</a>
+        <div class="nav-auth-group">
+            <a href="login.html" class="nav-btn nav-btn-outline" id="navLoginBtn">Login</a>
+            <a href="signup.html" class="nav-btn nav-btn-solid" id="navSignupBtn">Sign Up</a>
+            <a href="dashboard.html" class="nav-btn nav-btn-solid hidden" id="navDashboardBtn">DASHBOARD</a>
+            <a href="#" class="nav-link hidden" id="navLogoutBtn">LOGOUT</a>
+        </div>
+    </nav>
+
+</header>
+
+<!-- HOME / HERO SECTION (EXACT VISUAL REFERENCE) -->
+<section class="hero" id="home">
+
+    <!-- Carousel Arrow Left (White) -->
+    <button class="hero-carousel-arrow hero-prev" aria-label="Previous slide" onclick="document.querySelector('.hero-image-wrap').scrollBy({left: -300, behavior: 'smooth'})">
+        &#10094;
+    </button>
+
+    <div class="hero-layout">
+
+        <!-- Left Athlete Image with Vertical Indicator (from reference image) -->
+        <div class="hero-image-wrap">
+            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1200&q=85" alt="FITZONE Training" class="hero-image" loading="eager">
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <!-- Right Bold Typography -->
+        <div class="hero-content">
+            <p class="tagline">BUILT FOR YOU</p>
+            <h1>START<br><span>STRONG</span></h1>
+            <p class="hero-text">
+                Take the first step towards a healthier, more vibrant life. Together, we build the foundation for your wellness journey.
+            </p>
+            <div class="hero-btns">
+                <a href="#plans" class="btn">
+                    Join Now &rarr;
+                </a>
+                <a href="#programs" class="btn btn-outline">
+                    Explore Programs
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Carousel Arrow Right (White) -->
+    <button class="hero-carousel-arrow hero-next" aria-label="Next slide" onclick="document.querySelector('.hero-image-wrap').scrollBy({left: 300, behavior: 'smooth'})">
+        &#10095;
+    </button>
+
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about section" id="about">
+
+    <div class="about-image"></div>
+
+    <div class="about-content">
+
+        <p class="tagline">ABOUT FITZONE</p>
+
+        <h2>
+            MORE THAN A<br>
+            <span>GYM.</span>
+        </h2>
+
+        <p>
+            FITZONE is a fitness community designed to help you break limits and achieve sustainable results. Whether your goal is building muscle, cutting body fat, or building lifelong functional endurance, our world-class trainers and premium facilities support you every step of the way.
+        </p>
+
+        <div class="stats">
+
+            <div>
+                <strong>500+</strong>
+                <small>Active Members</small>
+            </div>
+
+            <div>
+                <strong>10+</strong>
+                <small>Certified Trainers</small>
+            </div>
+
+            <div>
+                <strong>20+</strong>
+                <small>Advanced Equipment</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROGRAMS SECTION (MATCHES 4-CARD REFERENCE IMAGE) -->
+<section class="programs section" id="programs">
+
+    <div class="programs-header-row">
+        <div class="programs-title-group">
+            <p class="tagline">BUILT FOR YOU</p>
+            <h2>Our Programs</h2>
+        </div>
+        <p class="programs-desc">
+            Discover personalized training and fitness solutions designed to help you move better, feel stronger, and stay motivated.
+        </p>
+        <a href="#contact" class="view-all-link">View All Programs &rarr;</a>
+    </div>
+
+    <div class="programs-carousel-wrap">
+        <!-- Circular Yellow Nav Arrow Left (from reference image) -->
+        <button class="programs-carousel-arrow prog-prev" aria-label="Previous program" onclick="document.querySelector('.program-grid').scrollBy({left: -320, behavior: 'smooth'})">
+            &#10094;
+        </button>
+
+        <div class="program-grid">
+
+            <!-- 01. Strength Training -->
+            <article class="program-card">
+                <span class="program-card-num">01.</span>
+                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=85" alt="Strength Training at FITZONE" loading="lazy">
+                <div class="card-info">
+                    <h3>Strength Training</h3>
+                    <div class="program-yellow-bar"></div>
+                    <p>Build raw power, functional muscle mass, and core stability with Olympic barbells, power racks, and free weights.</p>
+                    <a href="#contact" class="program-select-btn plan-btn" data-plan="Strength Training">Inquire Program &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 02. Cardio Fitness -->
+            <article class="program-card">
+                <span class="program-card-num">02.</span>
+                <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=800&q=85" alt="Cardio Fitness at FITZONE" loading="lazy">
+                <div class="card-info">
+                    <h3>Cardio Fitness</h3>
+                    <div class="program-yellow-bar"></div>
+                    <p>Maximize stamina, optimize cardiovascular health, and accelerate metabolic burn with smart treadmills and HIIT rowing.</p>
+                    <a href="#contact" class="program-select-btn plan-btn" data-plan="Cardio Fitness">Inquire Program &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 03. Weight Loss -->
+            <article class="program-card">
+                <span class="program-card-num">03.</span>
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=85" alt="Weight Loss Training at FITZONE" loading="lazy">
+                <div class="card-info">
+                    <h3>Weight Loss</h3>
+                    <div class="program-yellow-bar"></div>
+                    <p>Structured high-intensity calorie incineration combined with customized nutrition roadmaps for sustainable fat loss.</p>
+                    <a href="#contact" class="program-select-btn plan-btn" data-plan="Weight Loss">Inquire Program &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 04. Muscle Building -->
+            <article class="program-card">
+                <span class="program-card-num">04.</span>
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=85" alt="Muscle Building at FITZONE" loading="lazy">
+                <div class="card-info">
+                    <h3>Muscle Building</h3>
+                    <div class="program-yellow-bar"></div>
+                    <p>Hypertrophy-focused training splits, progressive overload techniques, and certified 1-on-1 guidance for serious gains.</p>
+                    <a href="#contact" class="program-select-btn plan-btn" data-plan="Muscle Building">Inquire Program &rarr;</a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Circular Yellow Nav Arrow Right (from reference image) -->
+        <button class="programs-carousel-arrow prog-next" aria-label="Next program" onclick="document.querySelector('.program-grid').scrollBy({left: 320, behavior: 'smooth'})">
+            &#10095;
+        </button>
+    </div>
+
+</section>
+
+<!-- MEMBERSHIP SECTION -->
+<section class="plans section" id="plans">
+
+    <p class="tagline">INVEST IN YOURSELF</p>
+
+    <h2>
+        MEMBERSHIP <span>PLANS</span>
+    </h2>
+
+    <div class="plan-grid">
+
+        <article class="plan-card">
+
+            <h3>MONTHLY</h3>
+
+            <p class="price">
+                ₹999 <small>/ month</small>
+            </p>
+
+            <ul>
+                <li>✓ Full gym access</li>
+                <li>✓ Standard & free weight equipment</li>
+                <li>✓ General workout orientation</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-outline plan-btn" data-plan="Monthly">
+                GET STARTED
+            </a>
+
+        </article>
+
+        <article class="plan-card featured">
+
+            <span class="popular">POPULAR</span>
+
+            <h3>QUARTERLY</h3>
+
+            <p class="price">
+                ₹2,499 <small>/ 3 months</small>
+            </p>
+
+            <ul>
+                <li>✓ Full gym access</li>
+                <li>✓ Personalized workout guidance</li>
+                <li>✓ Fitness & BMI progress tracking</li>
+            </ul>
+
+            <a href="#contact" class="btn plan-btn" data-plan="Quarterly">
+                GET STARTED
+            </a>
+
+        </article>
+
+        <article class="plan-card">
+
+            <h3>YEARLY</h3>
+
+            <p class="price">
+                ₹8,999 <small>/ year</small>
+            </p>
+
+            <ul>
+                <li>✓ Full gym access all year</li>
+                <li>✓ Dedicated trainer consultation</li>
+                <li>✓ Free locker & diet consultation</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-outline plan-btn" data-plan="Yearly">
+                GET STARTED
+            </a>
+
+        </article>
+
+    </div>
+
+    <p class="note">
+        Demo prices only. Update them to match your actual gym fees.
+    </p>
+
+</section>
+
+<!-- CONTACT / BOOKING SECTION -->
+<section class="contact section" id="contact">
+
+    <p class="tagline">LET'S GET STARTED</p>
+
+    <h2>
+        START YOUR <span>JOURNEY</span>
+    </h2>
+
+    <p>
+        Ready to transform your fitness? Send us your details.
+    </p>
+
+    <form id="contactForm">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Your name"
+            maxlength="120"
+            required
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Your email address"
+            maxlength="120"
+            required
+        >
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Phone number"
+            maxlength="25"
+            required
+        >
+
+        <select id="membership" required>
+            <option value="">Choose a membership or program</option>
+            <optgroup label="Membership Plans">
+                <option value="Monthly">Monthly Plan (₹999 / mo)</option>
+                <option value="Quarterly">Quarterly Plan (₹2,499 / 3 mos)</option>
+                <option value="Yearly">Yearly Plan (₹8,999 / yr)</option>
+            </optgroup>
+            <optgroup label="Specialized Programs">
+                <option value="Strength Training">Strength Training</option>
+                <option value="Cardio Fitness">Cardio Fitness</option>
+                <option value="Weight Loss">Weight Loss</option>
+                <option value="Muscle Building">Muscle Building</option>
+            </optgroup>
+        </select>
+
+        <textarea
+            id="message"
+            placeholder="Your message or special fitness goals (optional)"
+            maxlength="1000"
+        ></textarea>
+
+        <button class="btn" type="submit">
+            SEND ENQUIRY ↗
+        </button>
+
+    </form>
+
+    <p id="formMessage" role="status"></p>
+
+    <div class="contact-details">
+
+        <p>📍 FITZONE Fitness Club, Calicut, Kerala (Exact address to be confirmed)</p>
+        <p>📞 +91 97785 22144 (Gym Reception)</p>
+        <p>✉️ contact@fitzonegym.com (Official Support)</p>
+        <p>⏰ Mon – Sat: 6:00 AM – 10:00 PM | Sun: 7:00 AM – 1:00 PM</p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-brand">
+        <a href="#home" class="logo">
+            <span class="logo-arm-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffcc00">
+                    <path d="M20.57 14.86L22 13.43L20.57 12L17 15.57L8.43 7L12 3.43L10.57 2L9.14 3.43L7.71 2L5.57 4.14L4.14 2.71L2.71 4.14L4.14 5.57L2 7.71L3.43 9.14L2 10.57L5.57 14.14L14.14 22.71L17.71 19.14L16.29 17.71L17.71 16.29L20.57 14.86Z"/>
+                </svg>
+            </span>
+            FIT<span>ZONE</span>
+        </a>
+        <p class="footer-tagline">Premium fitness facilities, certified personal training, and world-class equipment.</p>
+    </div>
+
+    <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#plans">Memberships</a>
+        <a href="#contact">Contact</a>
+        <a href="dashboard.html">Member Portal</a>
+        <a href="admin.html">Admin</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+    </div>
+
+    <div class="footer-copy">
+        <p>© <span id="year"></span> FITZONE GYM. All rights reserved.</p>
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT: LOAD ONLY ONCE -->
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

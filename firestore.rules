@@ -1,0 +1,61 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper function to check if the authenticated user is the designated Gym Admin
+    function isAdmin() {
+      return request.auth != null && 
+        (request.auth.token.email == "arjununnikrishnan9778@gmail.com" || 
+         request.auth.token.email.matches(".*@fitzonegym\\.com"));
+    }
+
+    // Helper function to check if user is signed in
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // ==========================================
+    // 1. USERS COLLECTION SECURITY RULES
+    // ==========================================
+    match /users/{userId} {
+      // Members can read their own profile; Admin can read all member profiles
+      allow read: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+
+      // Members can only create their own user document during signup
+      // Security: Strictly enforce role == 'member' to prevent privilege escalation
+      allow create: if isAuthenticated() 
+                    && request.auth.uid == userId 
+                    && request.resource.data.role == 'member';
+
+      // Members can update their profile (e.g. phone/name) but CANNOT change their role to admin
+      allow update: if isAuthenticated() 
+                    && request.auth.uid == userId 
+                    && request.resource.data.role == resource.data.role;
+
+      // Only Admin can delete user profile records
+      allow delete: if isAdmin();
+    }
+
+    // ==========================================
+    // 2. BOOKINGS COLLECTION SECURITY RULES
+    // ==========================================
+    match /booking/{bookingId} {
+      // Anyone (guest or member) can submit a new booking request
+      allow create: if true;
+
+      // Admin has full control to read, update status (approve/reject), and delete bookings
+      allow update, delete: if isAdmin();
+
+      // Members can read their own bookings (matching their email or userId); Admin can read all
+      allow read: if isAdmin() || (
+        isAuthenticated() && (
+          resource.data.email == request.auth.token.email || 
+          resource.data.userId == request.auth.uid
+        )
+      );
+    }
+
+  }
+}
+

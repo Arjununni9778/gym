@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="FITZONE Gym Admin Portal. Manage member bookings, review requests, and oversee registrations.">
+    <meta name="theme-color" content="#ffcc00">
+    <title>Admin Portal | FITZONE Premium Gym</title>
+
+    <!-- Vector Favicon with Yellow Accent -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23111'/><path d='M16 16 L48 16 L34 34 L48 34 L20 54 L28 36 L16 36 Z' fill='%23ffcc00'/></svg>">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- ADMIN LOGIN BOX (SHOWN WHEN LOGGED OUT) -->
+    <div id="loginBox" class="auth-card" style="margin: 80px auto;">
+        <div class="auth-header">
+            <p class="tagline">STAFF & TRAINERS</p>
+            <h2>FITZONE <span>ADMIN</span></h2>
+            <p class="auth-subtitle">Authorized gym administration portal.</p>
+        </div>
+        <form id="loginForm" novalidate>
+            <div class="form-group">
+                <label for="email">Admin Email</label>
+                <input type="email" id="email" placeholder="Admin Email" value="arjununnikrishnan9778@gmail.com"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password (at least 6 characters)" required>
+            </div>
+            <button class="btn auth-submit-btn" type="submit" id="loginBtn">LOGIN TO ADMIN ↗</button>
+            <button class="secondary-btn" type="button" id="registerBtn">First Time? Create Admin Account</button>
+            <div style="text-align:center; margin-top:15px;">
+                <button type="button" class="link-btn" id="forgotBtn">Forgot Password? Send Reset Email</button>
+            </div>
+        </form>
+        <div id="loginMessage" class="form-message" style="margin-top: 15px;"></div>
+        <div class="auth-footer">
+            <p><a href="index.html">← Return to Homepage</a></p>
+        </div>
+    </div>
+
+    <!-- ADMIN DASHBOARD (SHOWN WHEN LOGGED IN) -->
+    <div class="hidden" id="dashboard">
+        <header class="header dashboard-header">
+            <a href="index.html" class="logo">
+                FIT<span>ZONE</span> <span style="font-size:14px;color:#888;font-family:'Poppins';">| ADMIN</span>
+            </a>
+            <div class="dashboard-nav-actions">
+                <a href="index.html" class="nav-link">Homepage</a>
+                <a href="dashboard.html" class="nav-link">Member View</a>
+                <button class="btn btn-outline-sm" id="logoutBtn">LOGOUT</button>
+            </div>
+        </header>
+
+        <main class="dashboard-container">
+            <div class="dashboard-hero">
+                <div>
+                    <p class="tagline">OPERATIONS CENTER</p>
+                    <h1>ADMIN <span>DASHBOARD</span></h1>
+                    <p class="hero-subtext">Manage booking applications, approve memberships, and maintain gym requests.
+                    </p>
+                </div>
+            </div>
+
+            <!-- OVERVIEW STATS -->
+            <section class="dashboard-stats-grid">
+                <div class="stat-card">
+                    <h3>Total Bookings</h3>
+                    <p class="stat-number" id="totalCount">0</p>
+                    <small>All enquiries received</small>
+                </div>
+                <div class="stat-card stat-pending">
+                    <h3>Pending</h3>
+                    <p class="stat-number" id="pendingCount">0</p>
+                    <small>Awaiting review</small>
+                </div>
+                <div class="stat-card stat-approved">
+                    <h3>Approved</h3>
+                    <p class="stat-number" id="approvedCount">0</p>
+                    <small>Confirmed memberships</small>
+                </div>
+                <div class="stat-card stat-rejected">
+                    <h3>Rejected</h3>
+                    <p class="stat-number" id="rejectedCount">0</p>
+                    <small>Declined / Cancelled</small>
+                </div>
+            </section>
+
+            <!-- BOOKING MANAGEMENT TABLE -->
+            <section class="dashboard-card booking-history-card">
+                <div class="card-title-row">
+                    <div>
+                        <h2>MEMBERSHIP <span>ENQUIRIES</span></h2>
+                        <p class="card-subtitle">Review incoming gym bookings and update status in real-time.</p>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Plan</th>
+                                <th>Date</th>
+                                <th>Message</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingTable">
+                            <tr>
+                                <td colspan="8" class="table-msg">Loading bookings...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p id="dashboardMessage" class="form-message" style="margin-top:15px;"></p>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+
+</html>
